@@ -1,0 +1,20 @@
+[versions]
+moshi = "1.12.0"
+retrofit = "2.9.0"
+kotlin = "1.6.21"
+what3wordsJavaWrapper = "3.1.15"
+junitJupiter = "5.8.1"
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+
+[libraries]
+moshi-core = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshi" }
+retrofit-core = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
+retrofit-moshiconverter = { module = "com.squareup.retrofit2:converter-moshi", version.ref = "retrofit" }
+what3words-javawrapper = { module = "com.what3words:w3w-java-wrapper", version.ref = "what3wordsJavaWrapper" }
+junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junitJupiter" }
+junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junitJupiter" }
+
+[bundles]
+retrofit = ["retrofit-moshiconverter", "retrofit-core"]

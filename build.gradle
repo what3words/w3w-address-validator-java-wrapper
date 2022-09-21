@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+    alias(libs.plugins.kotlin.jvm)
+}
+
+group 'com.what3words'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation libs.junit.jupiter.api
+    testRuntimeOnly libs.junit.jupiter.engine
+    implementation libs.what3words.javawrapper
+    implementation libs.bundles.retrofit
+    implementation libs.moshi.core
+}
+
+test {
+    useJUnitPlatform()
+}
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
