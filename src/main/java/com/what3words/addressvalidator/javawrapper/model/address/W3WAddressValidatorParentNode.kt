@@ -7,6 +7,8 @@ data class W3WAddressValidatorParentNode(
     override val container: String,
     override val parent: W3WAddressValidatorAncestorNode?
 ) : W3WAddressValidatorAncestorNode() {
+    override val id: String
+        get() = container
     override val isContainer: Boolean = true
     override val children: MutableList<W3WAddressValidatorNode> = mutableListOf()
 }

@@ -4,7 +4,8 @@ data class W3WAddressValidatorLeafNode(
     override val primaryAddress: String,
     override val secondaryAddress: String,
     override val threeWordAddress: String,
-    override val parent: W3WAddressValidatorAncestorNode?
+    override val parent: W3WAddressValidatorAncestorNode?,
+    override val id: String = ""
 ) : W3WAddressValidatorNode() {
     override val isContainer: Boolean = false
 }

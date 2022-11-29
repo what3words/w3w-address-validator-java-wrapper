@@ -1,4 +1,4 @@
-package com.what3words.addressvalidator.javawrapper.model.address.info
+package com.what3words.addressvalidator.javawrapper.model.address.streetaddress
 
 
 data class W3WStreetAddressLoqate(

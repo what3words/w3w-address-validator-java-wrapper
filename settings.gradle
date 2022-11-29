@@ -1,4 +1,3 @@
 rootProject.name = 'w3w-address-validator-java-wrapper'
 
-enableFeaturePreview('TYPESAFE_PROJECT_ACCESSORS')
 enableFeaturePreview("VERSION_CATALOGS")

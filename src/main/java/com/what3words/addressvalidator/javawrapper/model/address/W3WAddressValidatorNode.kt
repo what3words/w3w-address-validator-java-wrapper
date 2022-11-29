@@ -6,6 +6,7 @@ sealed class W3WAddressValidatorNode {
     abstract val secondaryAddress: String
     abstract val isContainer: Boolean
     abstract val threeWordAddress: String
+    abstract val id: String
     abstract val parent: W3WAddressValidatorAncestorNode?
 }
 

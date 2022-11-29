@@ -1,0 +1,73 @@
+package com.what3words.addressvalidator.javawrapper.addresslookupservice.loqate.mappers
+
+import com.what3words.addressvalidator.javawrapper.addresslookupservice.loqate.internal.LoqateNode
+import com.what3words.addressvalidator.javawrapper.addresslookupservice.loqate.network.dto.RetrieveItemDTO
+import com.what3words.addressvalidator.javawrapper.model.address.streetaddress.W3WStreetAddressLoqate
+
+internal fun RetrieveItemDTO.toW3WStreetAddress(
+    leafNode: LoqateNode,
+    threeWordAddress: String
+): W3WStreetAddressLoqate = run {
+    W3WStreetAddressLoqate(
+        id = id,
+        domesticId = domesticId,
+        language = language,
+        languageAlternatives = languageAlternatives,
+        department = department,
+        company = company,
+        subBuilding = subBuilding,
+        buildingNumber = buildingNumber,
+        postalCode = postalCode,
+        secondaryStreet = secondaryStreet,
+        buildingName = buildingName,
+        street = street,
+        block = block,
+        neighbourhood = neighbourhood,
+        district = district,
+        city = city,
+        line1 = line1,
+        line2 = line2,
+        line3 = line3,
+        line4 = line4,
+        line5 = line5,
+        adminAreaName = adminAreaName,
+        adminAreaCode = adminAreaCode,
+        province = province,
+        provinceName = provinceName,
+        provinceCode = provinceCode,
+        countryName = countryName,
+        countryIso2 = countryIso2,
+        countryIso3 = countryIso3,
+        countryIsoNumber = countryIsoNumber,
+        sortingNumber1 = sortingNumber1,
+        sortingNumber2 = sortingNumber2,
+        barcode = barcode,
+        poBoxNumber = poBoxNumber,
+        label = label,
+        type = type,
+        dataLevel = dataLevel,
+        field1 = field1,
+        field2 = field2,
+        field3 = field3,
+        field4 = field4,
+        field5 = field5,
+        field6 = field6,
+        field7 = field7,
+        field8 = field8,
+        field9 = field9,
+        field10 = field10,
+        field11 = field11,
+        field12 = field12,
+        field13 = field13,
+        field14 = field14,
+        field15 = field15,
+        field16 = field16,
+        field17 = field17,
+        field18 = field18,
+        field19 = field19,
+        field20 = field20,
+        mWords = threeWordAddress,
+        mPrimary = leafNode.primaryAddress,
+        mSecondary = leafNode.description
+    )
+}

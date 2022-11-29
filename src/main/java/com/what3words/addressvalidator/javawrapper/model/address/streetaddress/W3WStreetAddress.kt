@@ -1,5 +1,6 @@
-package com.what3words.addressvalidator.javawrapper.model.address.info
+package com.what3words.addressvalidator.javawrapper.model.address.streetaddress
 
+import java.io.Serializable
 
 /**
  * @property words what3words address for the address
@@ -13,4 +14,4 @@ sealed class W3WStreetAddress(
     val description: String?,
     val primary: String?,
     val secondary: String?
-)
+) : Serializable
