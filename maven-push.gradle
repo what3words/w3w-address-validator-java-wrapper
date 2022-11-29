@@ -1,0 +1,77 @@
+def ossrhUsername = findProperty('OSSRH_USERNAME')
+def ossrhPassword = findProperty('OSSRH_PASSWORD')
+def signingKey = findProperty('SIGNING_KEY')
+def signingKeyPwd = findProperty('SIGNING_KEY_PWD')
+def libVersion = findProperty('LIBRARY_VERSION') ? findProperty('LIBRARY_VERSION') : "0.1.0"
+
+task androidSourcesJar(type: Jar) {
+    archiveClassifier.convention('sources')
+    archiveClassifier.set('sources')
+    from android.sourceSets.main.java.srcDirs
+}
+
+task androidJavadocsJar(type: Jar, dependsOn: dokkaJavadoc) {
+    archiveClassifier.convention('javadoc')
+    archiveClassifier.set('javadoc')
+    from "$buildDir/dokka"
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                // You can then customize attributes of the publication as shown below.
+                groupId = "com.what3words"
+                artifactId = "w3w-address-validator-java-wrapper"
+                version = libVersion
+
+                artifact androidSourcesJar
+                artifact androidJavadocsJar
+
+                pom {
+                    name = "w3w-address-validator-java-wrapper"
+                    description = 'Java library for what3words address validator'
+                    url = 'https://github.com/what3words/w3w-address-validator-java-wrapper'
+                    licenses {
+                        license {
+                            name = 'The MIT License (MIT)'
+                            url = 'https://github.com/what3words/w3w-address-validator-java-wrapper/blob/master/LICENSE'
+                        }
+                    }
+                    developers {
+                        developer {
+                            id = 'what3words'
+                            name = 'what3words'
+                            email = 'development@what3words.com'
+                        }
+                    }
+                    scm {
+                        connection = 'scm:git:git://github.com/what3words/w3w-address-validator-java-wrapper.git'
+                        developerConnection = 'scm:git:ssh://git@github.com:what3words/w3w-address-validator-java-wrapper.git'
+                        url = 'https://github.com/what3words/w3w-address-validator-java-wrapper'
+                    }
+                }
+            }
+        }
+        repositories {
+            maven {
+                name = "sonatype"
+
+                def releasesRepoUrl = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
+                def snapshotsRepoUrl = "https://oss.sonatype.org/content/repositories/snapshots/"
+                url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+
+                credentials {
+                    username ossrhUsername
+                    password ossrhPassword
+                }
+            }
+        }
+    }
+}
+
+signing {
+    useInMemoryPgpKeys(signingKey, signingKeyPwd)
+    sign publishing.publications
+}

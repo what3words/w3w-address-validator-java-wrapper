@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.kotlin.kapt)
 }
 
 group 'com.what3words'
@@ -10,13 +11,28 @@ repositories {
     mavenCentral()
 }
 
+compileJava {
+    targetCompatibility = "1.8"
+    sourceCompatibility = "1.8"
+}
+
 dependencies {
     testImplementation libs.junit.jupiter.api
     testRuntimeOnly libs.junit.jupiter.engine
+
     implementation libs.what3words.javawrapper
-    implementation libs.bundles.retrofit
     implementation libs.moshi.core
+    kapt libs.moshi.codegen
+    implementation libs.bundles.retrofit
+    implementation libs.bundles.kotlin
 }
+
+/*jar {
+    withSourcesJar()
+    manifest {
+        attributes 'Class-Path': 'Lretrofit2/ Lcom/squareup/'
+    }
+}*/
 
 test {
     useJUnitPlatform()
