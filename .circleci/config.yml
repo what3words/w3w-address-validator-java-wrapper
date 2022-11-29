@@ -20,7 +20,7 @@ jobs:
           command: ./gradlew wrapper
       - run:
           name: Download Dependencies
-          command: ./gradlew androidDependencies
+          command: ./gradlew dependencies
       - save_cache:
           paths:
             - ~/.gradle
