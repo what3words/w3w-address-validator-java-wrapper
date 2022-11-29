@@ -9,7 +9,7 @@ junitJupiter = "5.8.1"
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
-kotlin-kapt = {id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin"}
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 
 [libraries]
 moshi-core = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshi" }

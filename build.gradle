@@ -1,14 +1,22 @@
 plugins {
     id 'java'
+    id 'signing'
+    id 'maven-publish'
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.kotlin.kapt)
 }
 
+apply from: 'maven-push.gradle'
+
 group 'com.what3words'
 version '1.0-SNAPSHOT'
 
+
 repositories {
     mavenCentral()
+    maven {
+        url "https://plugins.gradle.org/m2/"
+    }
 }
 
 compileJava {
