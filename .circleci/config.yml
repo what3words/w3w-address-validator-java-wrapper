@@ -38,6 +38,8 @@ workflows:
   build-sonar-publish:
     jobs:
       - deploy-to-sonatype:
+          context:
+            - maven-sign
           name: Build, run tests, sonar and push to maven staging
           filters:
             branches:
