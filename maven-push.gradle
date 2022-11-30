@@ -2,7 +2,6 @@ def ossrhUsername = findProperty('OSSRH_USERNAME')
 def ossrhPassword = findProperty('OSSRH_PASSWORD')
 def signingKey = findProperty('SIGNING_KEY')
 def signingKeyPwd = findProperty('SIGNING_KEY_PWD')
-def libVersion = findProperty('LIBRARY_VERSION') ? findProperty('LIBRARY_VERSION') : "1.0.0"
 
 task sourcesJar(type: Jar) {
     archiveClassifier.convention('sources')
@@ -24,7 +23,7 @@ afterEvaluate {
                 // You can then customize attributes of the publication as shown below.
                 groupId = "com.what3words"
                 artifactId = "w3w-address-validator-java-wrapper"
-                version = libVersion
+                this.version = version
 
                 artifact sourcesJar
                 artifact javadocsJar
