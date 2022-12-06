@@ -35,7 +35,7 @@ afterEvaluate {
                     licenses {
                         license {
                             name = 'The MIT License (MIT)'
-                            url = 'https://github.com/what3words/w3w-android-design-library/blob/master/LICENSE'
+                            url = 'https://github.com/what3words/w3w-address-validator-java-wrapper/blob/master/LICENSE'
                         }
                     }
                     developers {
