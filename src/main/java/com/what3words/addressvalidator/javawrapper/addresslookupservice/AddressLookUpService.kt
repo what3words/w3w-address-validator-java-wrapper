@@ -11,5 +11,5 @@ sealed class AddressLookUpService(val key: String) {
         AddressLookUpService(key = loqateApiKey)
 
 
-    data class Data8(private val apiKey: String) : AddressLookUpService(key = apiKey)
+    data class Data8(private val data8ApiKey: String) : AddressLookUpService(key = data8ApiKey)
 }
