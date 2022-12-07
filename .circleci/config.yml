@@ -21,9 +21,13 @@ jobs:
       - run:
           name: Download Dependencies
           command: ./gradlew dependencies
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: jars-{{ checksum "build.gradle" }}
       - run:
-        name: Unit Tests
-        command: ./gradlew test
+          name: Unit Tests
+          command: ./gradlew test
   deploy-to-sonatype:
     executor:
       name: android/android-machine
