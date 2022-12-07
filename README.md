@@ -114,6 +114,14 @@ class MyViewModel() {
 }
 ```
 
+#### In Android Project 
+Add the following ProGuard rules
+```
+-keep class com.what3words.addressvalidator.javawrapper.addresslookupservice.loqate.network.dto.** {*; }
+-keep class com.what3words.addressvalidator.javawrapper.addresslookupservice.swiftcomplete.network.dto.** {*;}
+-keep class com.what3words.addressvalidator.javawrapper.addresslookupservice.data8.network.dto.** {*;}
+```
+
 Interface definition
 -------------------
 
