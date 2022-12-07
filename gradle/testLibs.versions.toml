@@ -1,6 +1,5 @@
 [versions]
 junit = "4.13.2"
-espresso = "3.4.0"
 mockito = "4.7.0"
 mockitoInline = "3.11.2"
 kotlinxCoroutines = "1.6.4"
