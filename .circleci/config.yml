@@ -12,9 +12,9 @@ jobs:
       - checkout
       - run:
           name: Unit Tests
-          command: ./gradlew test
+          command: ./gradlew test jacocoTestReport
       - store_test_results:
-          path: build/reports/tests
+          path: build/reports
   deploy-to-sonatype:
     executor:
       name: android/android-machine
