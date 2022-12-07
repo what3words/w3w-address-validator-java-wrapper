@@ -20,8 +20,6 @@ retrofit-moshiconverter = { module = "com.squareup.retrofit2:converter-moshi", v
 
 what3words-javawrapper = { module = "com.what3words:w3w-java-wrapper", version.ref = "what3wordsJavaWrapper" }
 
-junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junitJupiter" }
-junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junitJupiter" }
 kotlin-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinCoroutines" }
 kotlin-jdk-8 = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-jdk8", version.ref = "kotlinJDK8" }
 

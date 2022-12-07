@@ -22,8 +22,6 @@ compileJava {
 }
 
 dependencies {
-    testImplementation libs.junit.jupiter.api
-    testRuntimeOnly libs.junit.jupiter.engine
 
     implementation libs.what3words.javawrapper
     implementation libs.moshi.core
@@ -31,12 +29,17 @@ dependencies {
     implementation libs.bundles.retrofit
     implementation libs.bundles.kotlin
 
-    // mockwebserver
-    testImplementation "com.squareup.okhttp3:mockwebserver:4.9.3"
+    // junit
+    testImplementation testLibs.junit.jupiter.api
+    testRuntimeOnly testLibs.junit.jupiter.engine
+    testImplementation testLibs.mock.webserver
+
     // mockito
-    testImplementation "org.mockito:mockito-core:4.7.0"
-    testImplementation "org.mockito:mockito-inline:3.11.2"
-    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4"
+    testImplementation testLibs.mockito.core
+    testImplementation testLibs.mockito.inline
+
+    // kotlinx coroutines
+    testImplementation testLibs.kotlinx.coroutines
 }
 
 test {
