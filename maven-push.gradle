@@ -6,7 +6,7 @@ def signingKeyPwd = findProperty('SIGNING_KEY_PWD')
 task sourcesJar(type: Jar) {
     archiveClassifier.convention('sources')
     archiveClassifier.set("sources")
-    from sourceSets.main.allSource
+    from sourceSets.main.java.srcDirs
 }
 
 task javadocsJar(type: Jar) {
