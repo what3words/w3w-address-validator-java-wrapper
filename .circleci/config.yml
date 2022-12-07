@@ -10,24 +10,11 @@ jobs:
       resource-class: large
     steps:
       - checkout
-      - restore_cache:
-          key: jars-{{ checksum "build.gradle" }}
-      - run:
-          name: Chmod permissions #if permission for Gradlew Dependencies fail, use this.
-          command: sudo chmod +x ./gradlew
-      - run:
-          name: Wrapper
-          command: ./gradlew wrapper
-      - run:
-          name: Download Dependencies
-          command: ./gradlew dependencies
-      - save_cache:
-          paths:
-            - ~/.gradle
-          key: jars-{{ checksum "build.gradle" }}
       - run:
           name: Unit Tests
           command: ./gradlew test
+      - store_test_results:
+          path: build/test-results
   deploy-to-sonatype:
     executor:
       name: android/android-machine
