@@ -4,6 +4,15 @@ orbs:
   android: circleci/android@1.0
 
 jobs:
+  run-unit-tests:
+    executor:
+      name: android/android-machine
+      resource-class: large
+    steps:
+      - checkout
+      -run:
+        name: Unit Tests
+        command: ./gradlew test
   deploy-to-sonatype:
     executor:
       name: android/android-machine
@@ -37,6 +46,8 @@ jobs:
 workflows:
   build-sonar-publish:
     jobs:
+      - run-unit-tests:
+          name: Run unit tests
       - deploy-to-sonatype:
           context:
             - maven-sign

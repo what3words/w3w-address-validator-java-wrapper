@@ -30,6 +30,13 @@ dependencies {
     kapt libs.moshi.codegen
     implementation libs.bundles.retrofit
     implementation libs.bundles.kotlin
+
+    // mockwebserver
+    testImplementation "com.squareup.okhttp3:mockwebserver:4.9.3"
+    // mockito
+    testImplementation "org.mockito:mockito-core:4.7.0"
+    testImplementation "org.mockito:mockito-inline:3.11.2"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4"
 }
 
 test {

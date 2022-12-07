@@ -1,0 +1,35 @@
+{
+  "Status": {
+    "Success": true,
+    "ErrorMessage": null,
+    "CreditsRemaining": 88
+  },
+  "Results": [
+    {
+      "label": "///index.home.raft - Bayswater, London",
+      "value": "///index.home.raft|CC=GB;PAF=2022.9.28.890786",
+      "container": true,
+      "items": 0
+    },
+    {
+      "label": "Index House, Midhurst Road, LIPHOOK, Hampshire, GU30 ",
+      "value": "A381267813|CC=GB;PAF=2022.9.28.890786",
+      "container": true,
+      "items": 16
+    },
+    {
+      "label": "///index.home.dart - Colden Common, Hampshire",
+      "value": "///index.home.dart|CC=GB;PAF=2022.9.28.890786",
+      "container": true,
+      "items": 0
+    },
+    {
+      "label": "///index.mime.raft - Copthorne, West Sussex",
+      "value": "///index.mime.raft|CC=GB;PAF=2022.9.28.890786",
+      "container": true,
+      "items": 0
+    }
+  ],
+  "Count": 4,
+  "SessionID": "5cfaeafa5f3245abbaa4c262d7a581af"
+}
