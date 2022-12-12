@@ -18,8 +18,9 @@ afterEvaluate {
                 // You can then customize attributes of the publication as shown below.
                 groupId = "com.what3words"
                 artifactId = "w3w-address-validator-java-wrapper"
-                artifacts = [ shadowJar, javadocJar, sourcesJar ]
                 this.version = version
+
+                artifacts = [ javadocJar, sourcesJar ]
 
                 pom {
                     name = "w3w-address-validator-java-wrapper"
