@@ -4,10 +4,9 @@ def signingKey = findProperty('SIGNING_KEY')
 def signingKeyPwd = findProperty('SIGNING_KEY_PWD')
 
 
-task sourcesJar(type: Jar) {
-    archiveClassifier.convention('sources')
-    archiveClassifier.set("sources")
-    from sourceSets.main.allSource
+java {
+    withSourcesJar()
+    // and/or analogously use “withJavadocJar()” to get a “javadocJar” task
 }
 
 task javadocsJar(type: Jar) {
