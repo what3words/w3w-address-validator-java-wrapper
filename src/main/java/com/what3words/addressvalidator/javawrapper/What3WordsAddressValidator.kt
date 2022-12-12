@@ -9,10 +9,10 @@ import com.what3words.addressvalidator.javawrapper.model.address.streetaddress.W
 import com.what3words.addressvalidator.javawrapper.model.error.W3WAddressValidatorError
 
 interface What3WordsAddressValidator {
-    /**
-     * searches near a three word address
-     * @param near: the three word address to search near
-     * @return Either [W3WAddressValidatorRootNode] if the call was successful or
+    /**searches near a three word address
+     *
+     *@param near: the three word address to search near
+     *@return Either [W3WAddressValidatorRootNode] if the call was successful or
      *  [W3WAddressValidatorError] in the event of a failure
      **/
     suspend fun search(near: String): Either<W3WAddressValidatorError, W3WAddressValidatorRootNode>

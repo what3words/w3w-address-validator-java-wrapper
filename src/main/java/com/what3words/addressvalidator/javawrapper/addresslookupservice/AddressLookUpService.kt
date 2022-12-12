@@ -1,7 +1,7 @@
 package com.what3words.addressvalidator.javawrapper.addresslookupservice
 
 
-sealed class AddressLookUpService(val key: String) : java.io.Serializable {
+sealed class AddressLookUpService(val key: String) {
 
     data class SwiftComplete(private val swiftCompleteApiKey: String) :
         AddressLookUpService(key = swiftCompleteApiKey)
@@ -11,5 +11,5 @@ sealed class AddressLookUpService(val key: String) : java.io.Serializable {
         AddressLookUpService(key = loqateApiKey)
 
 
-    data class Data8(private val data8ApiKey: String) : AddressLookUpService(key = data8ApiKey)
+    data class Data8(private val apiKey: String) : AddressLookUpService(key = apiKey)
 }

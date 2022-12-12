@@ -1,12 +1,3 @@
 rootProject.name = 'w3w-address-validator-java-wrapper'
 
 enableFeaturePreview("VERSION_CATALOGS")
-
-dependencyResolutionManagement {
-    versionCatalogs {
-        // declares an additional catalog, named 'testLibs', from the 'test-libs.versionstoml' file
-        testLibs {
-            from(files('gradle/testLibs.versions.toml'))
-        }
-    }
-}
