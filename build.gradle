@@ -6,6 +6,12 @@ plugins {
     alias(libs.plugins.kotlin.kapt)
 }
 
+java {
+    withSourcesJar()
+    withJavadocJar()
+    // and/or analogously use “withJavadocJar()” to get a “javadocJar” task
+}
+
 apply from: 'maven-push.gradle'
 
 group 'com.what3words'

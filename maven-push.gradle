@@ -4,12 +4,6 @@ def signingKey = findProperty('SIGNING_KEY')
 def signingKeyPwd = findProperty('SIGNING_KEY_PWD')
 
 
-java {
-    withSourcesJar()
-    withJavadocJar()
-    // and/or analogously use “withJavadocJar()” to get a “javadocJar” task
-}
-
 /*task javadocsJar(type: Jar) {
     archiveClassifier.convention("javadoc")
     archiveClassifier.set("javadoc")
@@ -24,6 +18,7 @@ afterEvaluate {
                 // You can then customize attributes of the publication as shown below.
                 groupId = "com.what3words"
                 artifactId = "w3w-address-validator-java-wrapper"
+                artifacts = [ shadowJar, javadocJar, sourcesJar ]
                 this.version = version
 
                 pom {
