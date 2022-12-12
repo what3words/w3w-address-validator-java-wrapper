@@ -19,8 +19,6 @@ publishing {
             artifactId = "w3w-address-validator-java-wrapper"
             this.version = version
 
-            artifacts = [javadocJar, sourcesJar]
-
             pom {
                 name = "w3w-address-validator-java-wrapper"
                 description = 'Java library for what3words address validator'
