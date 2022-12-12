@@ -2,6 +2,8 @@ package com.what3words.addressvalidator.javawrapper.utils
 
 import com.what3words.addressvalidator.javawrapper.What3WordsAddressValidator
 import com.what3words.addressvalidator.javawrapper.addresslookupservice.AddressLookUpService
+import com.what3words.addressvalidator.javawrapper.addresslookupservice.data8.What3WordsAddressValidatorData8
+import com.what3words.addressvalidator.javawrapper.addresslookupservice.data8.network.Data8API
 import com.what3words.addressvalidator.javawrapper.addresslookupservice.loqate.What3WordsAddressValidatorLoqate
 import com.what3words.addressvalidator.javawrapper.addresslookupservice.loqate.network.LoqateApi
 import com.what3words.addressvalidator.javawrapper.addresslookupservice.swiftcomplete.What3WordsAddressValidatorSwiftComplete
@@ -21,7 +23,11 @@ internal object AddressLookUpServiceUtils {
                 )
             }
             is AddressLookUpService.Data8 -> {
-                throw RuntimeException("No location provider Data8")
+                What3WordsAddressValidatorData8(
+                    data8APIKey = key,
+                    data8APIService = Data8API.data8APIService,
+                    coroutineDispatcher = Dispatchers.IO
+                )
             }
             is AddressLookUpService.Loqate -> {
                 What3WordsAddressValidatorLoqate(

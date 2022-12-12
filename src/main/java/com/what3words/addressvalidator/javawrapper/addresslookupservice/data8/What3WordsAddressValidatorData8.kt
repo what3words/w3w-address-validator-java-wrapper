@@ -18,7 +18,7 @@ import kotlinx.coroutines.withContext
 /** when we decide to support other countries, we shall provide a function in the [What3WordsAddressValidator] that lets clients specify options such as country**/
 private const val COUNTRY = "GB"
 
-internal class W3WAddressValidatorData8(
+internal class What3WordsAddressValidatorData8(
     private val coroutineDispatcher: CoroutineDispatcher,
     private val data8APIKey: String,
     private val data8APIService: Data8APIService

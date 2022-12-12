@@ -1,0 +1,65 @@
+{
+  "Status": {
+    "Success": true,
+    "ErrorMessage": null,
+    "CreditsRemaining": 87
+  },
+  "Result": {
+    "Address": {
+      "Lines": [
+        "Westway Community Transport",
+        "240 Acklam Road",
+        "LONDON",
+        "",
+        "",
+        "",
+        "W10 5YG"
+      ]
+    },
+    "RawAddress": {
+      "Organisation": "WESTWAY COMMUNITY TRANSPORT",
+      "Department": "",
+      "AddressKey": 28857204,
+      "OrganisationKey": 1745260,
+      "PostcodeType": "S",
+      "BuildingNumber": 240,
+      "SubBuildingName": "",
+      "BuildingName": "",
+      "DependentThoroughfareName": "",
+      "DependentThoroughfareDesc": "",
+      "ThoroughfareName": "ACKLAM",
+      "ThoroughfareDesc": "ROAD",
+      "DoubleDependentLocality": "",
+      "DependentLocality": "",
+      "Locality": "LONDON",
+      "Postcode": "W10 5YG",
+      "Dps": "1T",
+      "PoBox": "",
+      "PostalCounty": "",
+      "TraditionalCounty": "MIDDLESEX",
+      "AdministrativeCounty": "KENSINGTON AND CHELSEA",
+      "CountryISO2": null,
+      "UniqueReference": null,
+      "Location": {
+        "Easting": 524673,
+        "Northing": 181848,
+        "GridReference": "TQ246818",
+        "Longitude": -0.2028126525909646,
+        "Latitude": 51.52197576293449,
+        "CountyCode": null,
+        "County": null,
+        "DistrictCode": null,
+        "District": null,
+        "WardCode": null,
+        "Ward": null,
+        "Country": null
+      },
+      "AdditionalData": [
+        {
+          "Name": "What3Words",
+          "Value": "index.home.raft"
+        }
+      ]
+    }
+  }
+}

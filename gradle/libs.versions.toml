@@ -1,6 +1,6 @@
 [versions]
 moshi = "1.14.0"
-retrofit = "2.5.0"
+retrofit = "2.6.0"
 kotlin = "1.6.21"
 kotlinCoroutines = "1.6.4"
 kotlinJDK8 = "1.3.9"
@@ -9,7 +9,7 @@ junitJupiter = "5.8.1"
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
-kotlin-kapt = {id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin"}
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 
 [libraries]
 moshi-core = { module = "com.squareup.moshi:moshi-kotlin", version.ref = "moshi" }
@@ -20,8 +20,6 @@ retrofit-moshiconverter = { module = "com.squareup.retrofit2:converter-moshi", v
 
 what3words-javawrapper = { module = "com.what3words:w3w-java-wrapper", version.ref = "what3wordsJavaWrapper" }
 
-junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junitJupiter" }
-junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junitJupiter" }
 kotlin-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinCoroutines" }
 kotlin-jdk-8 = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-jdk8", version.ref = "kotlinJDK8" }
 

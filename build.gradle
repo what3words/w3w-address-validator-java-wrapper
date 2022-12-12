@@ -1,11 +1,22 @@
 plugins {
     id 'java'
+    id 'signing'
+    id 'maven-publish'
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.kotlin.kapt)
 }
 
+java {
+    withSourcesJar()
+    withJavadocJar()
+    // and/or analogously use “withJavadocJar()” to get a “javadocJar” task
+}
+
+apply from: 'maven-push.gradle'
+
 group 'com.what3words'
-version '1.0-SNAPSHOT'
+version = findProperty('LIBRARY_VERSION') ? findProperty('LIBRARY_VERSION') : "1.0.0"
+
 
 repositories {
     mavenCentral()
@@ -17,25 +28,33 @@ compileJava {
 }
 
 dependencies {
-    testImplementation libs.junit.jupiter.api
-    testRuntimeOnly libs.junit.jupiter.engine
 
     implementation libs.what3words.javawrapper
     implementation libs.moshi.core
     kapt libs.moshi.codegen
     implementation libs.bundles.retrofit
     implementation libs.bundles.kotlin
-}
 
-/*jar {
-    withSourcesJar()
-    manifest {
-        attributes 'Class-Path': 'Lretrofit2/ Lcom/squareup/'
-    }
-}*/
+    // junit
+    testImplementation testLibs.junit.jupiter.api
+    testRuntimeOnly testLibs.junit.jupiter.engine
+    testImplementation testLibs.mock.webserver
+
+    // mockito
+    testImplementation testLibs.mockito.core
+    testImplementation testLibs.mockito.inline
+
+    // kotlinx coroutines
+    testImplementation testLibs.kotlinx.coroutines
+}
 
 test {
     useJUnitPlatform()
+    reports {
+        junitXml {
+            outputPerTestCase = true // defaults to false
+        }
+    }
 }
 
 compileKotlin {
