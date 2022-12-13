@@ -4,20 +4,16 @@ def signingKey = findProperty('SIGNING_KEY')
 def signingKeyPwd = findProperty('SIGNING_KEY_PWD')
 
 
-task sourceJar(type: Jar) {
-    classifier "sources"
+task sourcesJar(type: Jar) {
+    archiveClassifier.convention('sources')
+    archiveClassifier.set("sources")
     from sourceSets.main.allSource
 }
 
-task javadocJar(type: Jar, dependsOn: javadoc) {
-    classifier "javadoc"
-    from javadoc.destinationDir
-}
-
-artifacts {
-    archives jar
-    archives sourceJar
-    archives javadocJar
+task javadocsJar(type: Jar) {
+    archiveClassifier.convention("javadoc")
+    archiveClassifier.set("javadoc")
+    from tasks.javadoc.destinationDir
 }
 
 publishing {
@@ -52,12 +48,8 @@ publishing {
                     url = 'https://github.com/what3words/w3w-address-validator-java-wrapper'
                 }
             }
-            artifact(sourceJar) {
-                classifier = 'sources'
-            }
-            artifact(javadocJar) {
-                classifier = 'javadoc'
-            }
+            artifact sourcesJar
+            artifact javadocsJar
         }
     }
     repositories {
