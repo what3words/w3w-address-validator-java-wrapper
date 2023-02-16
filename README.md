@@ -7,11 +7,12 @@ This JVM library contains code for accessing various address validation services
 
 * Swift Complete - [https://www.swiftcomplete.com](https://www.loqate.com/)
 * Data 8 - [https://www.data-8.co.uk](https://www.loqate.com/)
-* Loqate - [https://www.loqate.com/](https://www.loqate.com/)
 
 The library provides a unified protocol for these services via an interface called `W3WAddressValidatorInterface`.
 We provide a default implementation of this interface called `What3WordsAddressValidatorV1`, that makes it easy to
 switch between any of the supported address validation services.
+
+NOTE: There is code to use the Loqate address service in this package, but it is beta code only and should not be used in production until further notice.
 
 #### Example
 

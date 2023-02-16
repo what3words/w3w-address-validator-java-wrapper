@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  gradle: circleci/gradle@2.2.0
+  gradle: circleci/gradle@3.0.0
 
 jobs:
   run-unit-tests:
@@ -48,7 +48,9 @@ workflows:
       - deploy-to-sonatype:
           context:
             - maven-sign
+            - mobile
           name: Build, run tests, sonar and push to maven staging
+          requires: [Run unit tests]
           filters:
             branches:
               only:
