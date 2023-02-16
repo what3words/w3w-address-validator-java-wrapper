@@ -3,7 +3,7 @@
 Overview
 --------
 
-This JVM library contains code for accessing various address validation services. The services currently supported are:
+This JVM library allows you to perform an address validation operation on a what3words address through various address validation services. The services currently supported are:
 
 * Swift Complete - [https://www.swiftcomplete.com](https://www.loqate.com/)
 * Data 8 - [https://www.data-8.co.uk](https://www.loqate.com/)
