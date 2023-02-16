@@ -4,7 +4,7 @@ retrofit = "2.6.0"
 kotlin = "1.6.21"
 kotlinCoroutines = "1.6.4"
 kotlinJDK8 = "1.3.9"
-what3wordsJavaWrapper = "3.1.15"
+what3wordsJavaWrapper = "3.1.16"
 junitJupiter = "5.8.1"
 
 [plugins]
