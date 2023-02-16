@@ -9,4 +9,8 @@ dependencyResolutionManagement {
             from(files('gradle/testLibs.versions.toml'))
         }
     }
+    repositories {
+        mavenCentral()
+        google()
+    }
 }
